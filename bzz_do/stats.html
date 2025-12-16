@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Статистика</title>
+    <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="../src/images/profile.svg" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    <div class="stats-container">
+        <h2>Статистика</h2>
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">0</div>
+                <div class="stat-label">Всего задач</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-completed">0</div>
+                <div class="stat-label">Завершено</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-productivity">0%</div>
+                <div class="stat-label">Продуктивность</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-streak">0</div>
+                <div class="stat-label">Дней подряд</div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3>Выполнение задач (последние 7 дней)</h3>
+            <div class="chart-placeholder">
+                <canvas id="tasks-chart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3>Привычки за неделю</h3>
+            <div id="habit-summary">
+                <p>Нет привычек</p>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3>История активности</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Задач</th>
+                        <th>✅</th>
+                        <th>Привычек</th>
+                        <th>Настроение</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <tr><td colspan="5">Загрузка...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+    import { init } from '../bzz_do/src/pages/stats.js';
+    init();
+</script>
+
+    <script type="module" src="../src/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

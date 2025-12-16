@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Планнер</title>
+    <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="../src/images/profile.svg" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="planner-container">
+            <div class="calendar-section">
+                <h2>Календарь планирования</h2>
+                <div class="calendar-nav">
+                    <button id="planner-prev-month">&lt;</button>
+                    <span id="planner-month-year">Декабрь 2025</span>
+                    <button id="planner-next-month">&gt;</button>
+                </div>
+                <div id="planner-calendar-grid" class="planner-calendar-grid"></div>
+            </div>
+
+            <div class="planner-tasks">
+                <h2 id="planner-selected-day">Понедельник, 16 Декабря</h2>
+                <div class="task-list-placeholder">
+                    <p>Здесь отображаются задачи на выбранный день из раздела <strong>Задачи</strong>.</p>
+                    <p>Добавляйте задачи на дату — они появятся здесь.</p>
+                </div>
+                <ul id="planner-task-list" class="planner-task-list"></ul>
+            </div>
+        </div>
+    </main>
+
+    <div id="task-detail-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Детали задачи</h3>
+            <div id="task-detail-content">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../src/script.js"></script>
+</body>
+</html>

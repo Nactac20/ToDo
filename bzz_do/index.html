@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Задачи</title>
+    <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="../src/images/profile.svg" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="task-container">
+            <div class="calendar">
+                <h2>Календарь</h2>
+                <div id="calendar-nav" class="calendar-nav">
+                    <button id="prev-days">&lt;</button>
+                    <span id="calendar-range"></span>
+                    <button id="next-days">&gt;</button>
+                </div>
+                <div id="calendar-days"></div>
+            </div>
+
+            <section class="tasks">
+                <div class="tasks-header">
+                    <h2 id="current-date">Сегодня</h2>
+                    <button id="add-task-btn" class="btn-add">+</button>
+                </div>
+                <ul id="task-list"></ul>
+            </section>
+        </div>
+
+        <div class="container">
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="card-title">Трекер привычек</div>
+                    <div class="habit-nav">
+                        <button class="btn-add" id="add-habit">+</button>
+                        <div class="habit-nav-btn" id="prev-week-habits">&lt;</div>
+                        <span class="calendar-date-range" id="current-week-habits">1 Дек - 7 Дек</span>
+                        <div class="habit-nav-btn" id="next-week-habits">&gt;</div>
+                    </div>
+                </div>
+                <div class="habit-tracker">
+                    <table id="habits-table">
+                        <thead>
+                            <tr>
+                                <th>Привычка</th>
+                                <th>Пн</th>
+                                <th>Вт</th>
+                                <th>Ср</th>
+                                <th>Чт</th>
+                                <th>Пт</th>
+                                <th>Сб</th>
+                                <th>Вс</th>
+                                <th>Заметки</th>
+                            </tr>
+                        </thead>
+                        <tbody id="habits-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="add-habit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Добавить привычку</h3>
+            <div class="form-group">
+                <label for="habit-name">Название привычки</label>
+                <input type="text" id="habit-name" placeholder="Например: Пить воду">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="add-habit-submit" class="btn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Добавить задачу</h3>
+            <div class="form-group">
+                <label for="task-name">Название задачи</label>
+                <input type="text" id="task-name" placeholder="Например: Купить продукты">
+            </div>
+            <div class="form-group">
+                <label for="task-description">Описание</label>
+                <textarea id="task-description" placeholder="Дополнительные детали..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="subtasks">Подзадачи (по одной на строку)</label>
+                <textarea id="subtasks" placeholder="Молоко&#10;Хлеб&#10;Яйца"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="add-task-submit" class="btn-save">Сохранить</button>
+            </div>  
+        </div>
+    </div>
+
+    <div id="edit-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Редактировать задачу</h3>
+            <div class="form-group">
+                <label for="edit-task-name">Название задачи</label>
+                <input type="text" id="edit-task-name" placeholder="Например: Купить продукты">
+            </div>
+            <div class="form-group">
+                <label for="edit-task-description">Описание</label>
+                <textarea id="edit-task-description" placeholder="Дополнительные детали..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="edit-subtasks">Подзадачи (по одной на строку)</label>
+                <textarea id="edit-subtasks" placeholder="Молоко&#10;Хлеб"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="edit-task-submit" class="btn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Удалить задачу</h3>
+            <p>Удаляем задачу (безвозвратно)</p>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="delete-confirm-btn" class="btn-delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="../src/script.js"></script>
+</body>
+</html>
