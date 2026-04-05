@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Задачи</title>
+  <script type="module" crossorigin src="/ToDo/assets/script-BY_DpysF.js"></script>
+  <link rel="stylesheet" crossorigin href="/ToDo/assets/script-BuSBJP-8.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20standalone='no'?%3e%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%2020010904//EN'%20'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3e%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20width='512.000000pt'%20height='512.000000pt'%20viewBox='0%200%20512.000000%20512.000000'%20preserveAspectRatio='xMidYMid%20meet'%3e%3cg%20transform='translate(0.000000,512.000000)%20scale(0.100000,-0.100000)'%20fill='%23000000'%20stroke='none'%3e%3cpath%20d='M2350%204419%20c-357%20-40%20-713%20-195%20-995%20-431%20-469%20-392%20-719%20-1009%20-655%20-1617%2093%20-884%20787%20-1578%201671%20-1671%20607%20-64%201225%20186%201617%20655%20583%20696%20589%201683%2015%202392%20-390%20482%20-1030%20742%20-1653%20672z%20m433%20-144%20c1006%20-132%201679%20-1089%201465%20-2084%20-63%20-296%20-209%20-575%20-419%20-805%20-66%20-72%20-193%20-186%20-208%20-186%20-4%200%20-11%2031%20-15%2069%20-31%20343%20-291%20692%20-621%20836%20l-75%2032%2061%2038%20c182%20112%20313%20305%20355%20522%2065%20342%20-118%20693%20-439%20844%20-200%2093%20-454%2093%20-654%200%20-358%20-168%20-536%20-575%20-412%20-945%2057%20-172%20165%20-314%20313%20-411%20l76%20-49%20-58%20-24%20c-259%20-109%20-479%20-337%20-578%20-600%20-35%20-94%20-64%20-219%20-64%20-277%200%20-19%20-4%20-35%20-10%20-35%20-15%200%20-140%20111%20-209%20186%20-229%20249%20-374%20546%20-437%20889%20-13%2073%20-18%20150%20-18%20285%20-1%20198%208%20268%2054%20445%20219%20835%201034%201383%201893%201270z%20m-73%20-821%20c175%20-41%20340%20-172%20419%20-334%2093%20-190%2093%20-376%202%20-566%20-46%20-97%20-148%20-210%20-235%20-263%20-353%20-212%20-805%20-50%20-939%20337%20-57%20166%20-46%20329%2034%20492%2078%20160%20243%20293%20414%20334%2080%2019%20224%2019%20305%200z%20m37%20-1420%20c351%20-72%20635%20-355%20708%20-703%207%20-36%2016%20-104%2020%20-151%20l7%20-85%20-74%20-42%20c-150%20-86%20-321%20-149%20-517%20-190%20-110%20-23%20-150%20-27%20-321%20-27%20-305%20-1%20-523%2049%20-785%20180%20-163%2081%20-151%2063%20-137%20201%2027%20257%20142%20475%20331%20628%20116%2094%20251%20160%20386%20188%2095%2021%20286%2021%20382%201z'/%3e%3c/g%3e%3c/svg%3e" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="task-container">
+            <div class="calendar">
+                <h2>Календарь</h2>
+                <div id="calendar-nav" class="calendar-nav">
+                    <button id="prev-days">&lt;</button>
+                    <span id="calendar-range"></span>
+                    <button id="next-days">&gt;</button>
+                </div>
+                <div id="calendar-days"></div>
+            </div>
+
+            <section class="tasks">
+                <div class="tasks-header">
+                    <h2 id="current-date">Сегодня</h2>
+                    <button id="add-task-btn" class="btn-add">+</button>
+                </div>
+                <ul id="task-list"></ul>
+            </section>
+        </div>
+
+        <div class="container">
+            <div class="card" style="grid-column: 1 / -1;">
+                <div class="card-header">
+                    <div class="card-title">Трекер привычек</div>
+                    <div class="habit-nav">
+                        <button class="btn-add" id="add-habit">+</button>
+                        <div class="habit-nav-btn" id="prev-week-habits">&lt;</div>
+                        <span class="calendar-date-range" id="current-week-habits">1 Дек - 7 Дек</span>
+                        <div class="habit-nav-btn" id="next-week-habits">&gt;</div>
+                    </div>
+                </div>
+                <div class="habit-tracker">
+                    <table id="habits-table">
+                        <thead>
+                            <tr>
+                                <th>Привычка</th>
+                                <th>Пн</th>
+                                <th>Вт</th>
+                                <th>Ср</th>
+                                <th>Чт</th>
+                                <th>Пт</th>
+                                <th>Сб</th>
+                                <th>Вс</th>
+                                <th>Заметки</th>
+                            </tr>
+                        </thead>
+                        <tbody id="habits-body">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="add-habit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Добавить привычку</h3>
+            <div class="form-group">
+                <label for="habit-name">Название привычки</label>
+                <input type="text" id="habit-name" placeholder="Например: Пить воду">
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="add-habit-submit" class="btn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="add-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Добавить задачу</h3>
+            <div class="form-group">
+                <label for="task-name">Название задачи</label>
+                <input type="text" id="task-name" placeholder="Например: Купить продукты">
+            </div>
+            <div class="form-group">
+                <label for="task-description">Описание</label>
+                <textarea id="task-description" placeholder="Дополнительные детали..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="subtasks">Подзадачи (по одной на строку)</label>
+                <textarea id="subtasks" placeholder="Молоко&#10;Хлеб&#10;Яйца"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="add-task-submit" class="btn-save">Сохранить</button>
+            </div>  
+        </div>
+    </div>
+
+    <div id="edit-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Редактировать задачу</h3>
+            <div class="form-group">
+                <label for="edit-task-name">Название задачи</label>
+                <input type="text" id="edit-task-name" placeholder="Например: Купить продукты">
+            </div>
+            <div class="form-group">
+                <label for="edit-task-description">Описание</label>
+                <textarea id="edit-task-description" placeholder="Дополнительные детали..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="edit-subtasks">Подзадачи (по одной на строку)</label>
+                <textarea id="edit-subtasks" placeholder="Молоко&#10;Хлеб"></textarea>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="edit-task-submit" class="btn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="delete-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Удалить задачу</h3>
+            <p>Удаляем задачу (безвозвратно)</p>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="delete-confirm-btn" class="btn-delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

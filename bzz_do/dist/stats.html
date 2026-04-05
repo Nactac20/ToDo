@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Статистика</title>
+  <script type="module" crossorigin src="/ToDo/assets/stats-BrE3x83o.js"></script>
+  <link rel="modulepreload" crossorigin href="/ToDo/assets/script-BY_DpysF.js">
+  <link rel="modulepreload" crossorigin href="/ToDo/assets/stats-JWv5-MaV.js">
+  <link rel="stylesheet" crossorigin href="/ToDo/assets/script-BuSBJP-8.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20standalone='no'?%3e%3c!DOCTYPE%20svg%20PUBLIC%20'-//W3C//DTD%20SVG%2020010904//EN'%20'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'%3e%3csvg%20version='1.0'%20xmlns='http://www.w3.org/2000/svg'%20width='512.000000pt'%20height='512.000000pt'%20viewBox='0%200%20512.000000%20512.000000'%20preserveAspectRatio='xMidYMid%20meet'%3e%3cg%20transform='translate(0.000000,512.000000)%20scale(0.100000,-0.100000)'%20fill='%23000000'%20stroke='none'%3e%3cpath%20d='M2350%204419%20c-357%20-40%20-713%20-195%20-995%20-431%20-469%20-392%20-719%20-1009%20-655%20-1617%2093%20-884%20787%20-1578%201671%20-1671%20607%20-64%201225%20186%201617%20655%20583%20696%20589%201683%2015%202392%20-390%20482%20-1030%20742%20-1653%20672z%20m433%20-144%20c1006%20-132%201679%20-1089%201465%20-2084%20-63%20-296%20-209%20-575%20-419%20-805%20-66%20-72%20-193%20-186%20-208%20-186%20-4%200%20-11%2031%20-15%2069%20-31%20343%20-291%20692%20-621%20836%20l-75%2032%2061%2038%20c182%20112%20313%20305%20355%20522%2065%20342%20-118%20693%20-439%20844%20-200%2093%20-454%2093%20-654%200%20-358%20-168%20-536%20-575%20-412%20-945%2057%20-172%20165%20-314%20313%20-411%20l76%20-49%20-58%20-24%20c-259%20-109%20-479%20-337%20-578%20-600%20-35%20-94%20-64%20-219%20-64%20-277%200%20-19%20-4%20-35%20-10%20-35%20-15%200%20-140%20111%20-209%20186%20-229%20249%20-374%20546%20-437%20889%20-13%2073%20-18%20150%20-18%20285%20-1%20198%208%20268%2054%20445%20219%20835%201034%201383%201893%201270z%20m-73%20-821%20c175%20-41%20340%20-172%20419%20-334%2093%20-190%2093%20-376%202%20-566%20-46%20-97%20-148%20-210%20-235%20-263%20-353%20-212%20-805%20-50%20-939%20337%20-57%20166%20-46%20329%2034%20492%2078%20160%20243%20293%20414%20334%2080%2019%20224%2019%20305%200z%20m37%20-1420%20c351%20-72%20635%20-355%20708%20-703%207%20-36%2016%20-104%2020%20-151%20l7%20-85%20-74%20-42%20c-150%20-86%20-321%20-149%20-517%20-190%20-110%20-23%20-150%20-27%20-321%20-27%20-305%20-1%20-523%2049%20-785%20180%20-163%2081%20-151%2063%20-137%20201%2027%20257%20142%20475%20331%20628%20116%2094%20251%20160%20386%20188%2095%2021%20286%2021%20382%201z'/%3e%3c/g%3e%3c/svg%3e" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+    <div class="stats-container">
+        <h2>Статистика</h2>
+        <div class="stats-cards">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-total">0</div>
+                <div class="stat-label">Всего задач</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-completed">0</div>
+                <div class="stat-label">Завершено</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-productivity">0%</div>
+                <div class="stat-label">Продуктивность</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-streak">0</div>
+                <div class="stat-label">Дней подряд</div>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3>Выполнение задач (последние 7 дней)</h3>
+            <div class="chart-placeholder">
+                <canvas id="tasks-chart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3>Привычки за неделю</h3>
+            <div id="habit-summary">
+                <p>Нет привычек</p>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3>История активности</h3>
+            <table class="history-table">
+                <thead>
+                    <tr>
+                        <th>Дата</th>
+                        <th>Задач</th>
+                        <th>✅</th>
+                        <th>Привычек</th>
+                        <th>Настроение</th>
+                    </tr>
+                </thead>
+                <tbody id="history-body">
+                    <tr><td colspan="5">Загрузка...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>

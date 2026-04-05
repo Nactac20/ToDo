@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Профиль</title>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="./src/images/profile.svg" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="profile-container">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="./src/images/profile.svg" alt="Аватар">
+                    <button id="change-avatar" class="btn-add">✎</button>
+                </div>
+                <div class="profile-info">
+                    <h2>Анна</h2>
+                    <p>Уровень: 🐝 Пчёлка-трудяга</p>
+                    <div class="profile-stats">
+                        <span>Задач выполнено: <strong>87</strong></span>
+                        <span>Дней в приложении: <strong>42</strong></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section">
+                <h3>Настройки</h3>
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label for="username">Имя пользователя</label>
+                        <input type="text" id="username" value="anna_bee">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" value="anna@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="theme">Цветовая тема</label>
+                        <select id="theme">
+                            <option value="bee">🐝 Пчелиная (жёлтая)</option>
+                            <option value="dark">🌙 Тёмная</option>
+                            <option value="light">☀️ Светлая</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="switch">
+                            <input type="checkbox" id="notifications" checked>
+                            <span class="slider"></span>
+                            Уведомления о дедлайнах
+                        </label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button class="btn-cancel">Отмена</button>
+                        <button id="save-profile" class="btn-save">Сохранить изменения</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-section danger-zone">
+                <h3>Сброс</h3>
+                <p>Внимание: действия необратимы!</p>
+                <button id="export-data" class="btn-save">Экспорт данных (JSON)</button>
+                <button id="clear-data" class="btn-delete">Сбросить всё</button>
+            </div>
+        </div>
+    </main>
+    <div id="save-profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Сохранить настройки?</h3>
+            <p>Все изменения будут применены немедленно.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="save-profile-confirm" class="btn-save">Сохранить</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="reset-all-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Сбросить все данные?</h3>
+            <p>Все задачи, привычки, записи дневника и настройки будут удалены безвозвратно.</p>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="reset-all-confirm" class="btn-delete">Сбросить всё</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/script.js"></script>
+</body>
+</html>

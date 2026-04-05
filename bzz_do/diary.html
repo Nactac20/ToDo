@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Bee - Дневник</title>
+    <link rel="stylesheet" href="./src/styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <div class="logo">🐝ToDo</div>
+        </div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Задачи</a>
+                <a href="planner.html">Планнер</a>
+                <a href="diary.html">Дневник</a>
+                <a href="stats.html">Статистика</a>
+                <a href="profile.html" class="user-avatar">
+                    <img src="./src/images/profile.svg" alt="Профиль">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="diary-container">
+            <div class="diary-header">
+                <h2>Дневник</h2>
+                <div class="diary-date-selector">
+                    <button id="diary-prev-day">&lt;</button>
+                    <span id="diary-current-date">Сегодня, 16 Декабря 2025</span>
+                    <button id="diary-next-day">&gt;</button>
+                </div>
+            </div>
+
+            <div class="diary-entry">
+                <div class="mood-selector">
+                    <label>Настроение сегодня:</label>
+                    <div class="mood-options">
+                        <button class="mood-btn" data-value="1">😞</button>
+                        <button class="mood-btn" data-value="2">😐</button>
+                        <button class="mood-btn" data-value="3">🙂</button>
+                        <button class="mood-btn" data-value="4">😄</button>
+                        <button class="mood-btn" data-value="5">🤩</button>
+                    </div>
+                </div>
+
+                <div class="diary-text">
+                    <label for="diary-content">Запись дня</label>
+                    <textarea id="diary-content" placeholder="Расскажите, как прошёл ваш день…"></textarea>
+                </div>
+
+                <div class="diary-actions">
+                    <button id="diary-save-btn" class="btn-save">Сохранить запись</button>
+                    <button id="diary-delete-btn" class="btn-delete" style="display: none;">Удалить запись</button>
+                </div>
+            </div>
+
+            <div class="diary-history">
+                <h3>Архив записей</h3>
+                <ul id="diary-entries-list">
+                    <li class="diary-history-item">
+                        <strong>15 Декабря</strong> — Настроение: 🙂  
+                        <button class="btn-view">Просмотр</button>
+                    </li>
+                    <li class="diary-history-item">
+                        <strong>10 Декабря</strong> — Настроение: 😄  
+                        <button class="btn-view">Просмотр</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <div id="delete-diary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Удалить запись</h3>
+            <p>Вы действительно хотите удалить запись? (безвозвратно)</p>
+            <div class="modal-actions">
+                <button class="btn-cancel">Отмена</button>
+                <button id="delete-diary-confirm" class="btn-delete">Удалить</button>
+            </div>
+        </div>
+    </div>
+    <div id="view-diary-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Запись за <span id="view-date"></span></h3>
+            <div class="mood-display">
+                <label>Настроение:</label>
+                <span id="view-mood">🙂</span>
+            </div>
+            <div class="diary-content-display">
+                <label>Текст:</label>
+                <pre id="view-content">Здесь будет текст записи...</pre>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-cancel">Закрыть</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./src/script.js"></script>
+</body>
+</html>
